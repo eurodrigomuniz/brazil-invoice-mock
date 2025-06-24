@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<retEnviNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+	<tpAmb>2</tpAmb>
+	<verAplic>[verAplic]</verAplic>
+	<cStat>[cStat]</cStat>
+	<xMotivo>[xMotivo]</xMotivo>
+	<cUF>[cUF]</cUF>
+	<dhRecbto>[dhRecbto]</dhRecbto>
+	<infRec>
+		<nRec>[nRec]</nRec>
+		<tMed>1</tMed>
+	</infRec>
+</retEnviNFe>
