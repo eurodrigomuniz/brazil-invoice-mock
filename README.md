@@ -6,7 +6,7 @@ This project aims to mock some of Brazil's invoice systems
 ## Clone repository
 Open command prompt in the folder desired to store the project and run the following command (make sure you have [Git](https://git-scm.com/) installed first):
 ```
-git clone https://SovosGvatLatam@dev.azure.com/SovosGvatLatam/Invoiceware/_git/Tools-Mock
+git clone https://github.com/eurodrigomuniz/brazil-invoice-mock.git
 ```
 ---
 ## Install Node
