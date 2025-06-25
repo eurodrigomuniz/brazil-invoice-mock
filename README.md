@@ -2,6 +2,13 @@
 
 This project aims to mock some of Brazil's invoice systems
 
+# Governements Currently Covered
+## Brazil
+
+- SEFAZ (Authorization)
+    - NfeReception (Outbound Sending)
+    - NfeReceptionStatus (Outbound Status Retrieval using Receipt)
+
 # Pre-requirements
 ## Clone repository
 Open command prompt in the folder desired to store the project and run the following command (make sure you have [Git](https://git-scm.com/) installed first):
