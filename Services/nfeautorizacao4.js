@@ -6,8 +6,10 @@ module.exports = {
 			nfeAutorizacaoLote: function (nfeDadosMsg) {
 				console.log(`Received nfeAutorizacaoLote request for a invoice of number: ${nfeDadosMsg.enviNFe.NFe.infNFe.ide.nNF}`)
 
+				let nfeDocument = NFeDocument.nfeAutorizacao4(nfeDadosMsg);
+
 				return {
-					$xml: new NFeDocument(nfeDadosMsg).getSendingReturnAttachment()
+					$xml: nfeDocument.getSendingReturnAttachment()
 				} 
 			}
 		}
