@@ -1,0 +1,19 @@
+<retConsReciNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+	<tpAmb>2</tpAmb>
+	<verAplic>[verAplic]</verAplic>
+	<nRec>[nRec]</nRec>
+	<cStat>104</cStat>
+	<xMotivo>Lote processado</xMotivo>
+	<cUF>[cUF]</cUF>
+	<dhRecbto>[dhRecbto]</dhRecbto>
+	<protNFe versao="4.00">
+		<infProt>
+			<tpAmb>2</tpAmb>
+			<verAplic>[verAplic]</verAplic>
+			<chNFe>[chNFe]</chNFe>
+			<dhRecbto>[receivalDate]</dhRecbto>
+			<cStat>[cStat]</cStat>
+			<xMotivo>[xMotivo]</xMotivo>
+		</infProt>
+	</protNFe>
+</retConsReciNFe>

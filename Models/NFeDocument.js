@@ -17,7 +17,7 @@ class NFeDocument {
     }
 
     static nfeAutorizacao4(nfeDadosMsg) {
-        let cStat = '100'
+        let cStat = this.getCStat(nfeDadosMsg)
         let cUF = nfeDadosMsg.enviNFe.NFe.infNFe.ide.cUF;
         return new NFeDocument({
             chNFe: nfeDadosMsg.enviNFe.NFe.infNFe.attributes.Id.replace('NFe', ''), // Access key of the NFe
@@ -49,6 +49,25 @@ class NFeDocument {
 
     /**
      * 
+     * @returns {string} Returns the cStat sent in the commentary field of the NFe (//infAdic/obsCont[0]/xTexto), if not found return 100 as default.
+     */
+    static getCStat(nfeDadosMsg) {
+        let xTexto = ""
+        try {
+            xTexto = nfeDadosMsg.enviNFe.NFe.infNFe.infAdic.obsCont[0].xTexto
+        } catch (e){
+            xTexto = nfeDadosMsg.enviNFe.NFe.infNFe.infAdic?.obsCont?.xTexto
+        }
+        if (xTexto) {
+            console.log("Custom cStat in the xTexto field: " + xTexto)
+        } else {
+            console.log("xTexto field was not used, using 100 as default cStat.")
+        }
+        return xTexto ?? "100"
+    }
+
+    /**
+     * 
      * @returns {string} XML string representing the response for sending an NFe (Nota Fiscal Eletrônica).
      */
     getSendingReturnAttachment() {
@@ -69,8 +88,13 @@ class NFeDocument {
         return retEnviNFe;
     }
 
+    /**
+     * Generate the XML return of the Check Status
+     * @returns {string} XML string representing the response for checkin the status of an NFe (Nota Fiscal Eletrônica).
+     */
     getStatusCheckReturnAttachment() {
-        let retConsReciNFe = fs.readFileSync('./Assets/Responses/retConsReciNFe.xml', 'utf-8')  // Read the contents of the file
+        let xmlToUse = this.cStat == "100" ? "retConsReciNFe.xml" : "retConsReciNFe_Rejection.xml"
+        let retConsReciNFe = fs.readFileSync(`./Assets/Responses/${xmlToUse}`, 'utf-8')  // Read the contents of the file
 
         retConsReciNFe = retConsReciNFe.replaceAll("[verAplic]", this.verAplic[this.cUF])
         retConsReciNFe = retConsReciNFe.replace("[nRec]", this.nRec)
@@ -86,6 +110,10 @@ class NFeDocument {
         return retConsReciNFe
     }
 
+    /**
+     * 
+     * @returns {string} Returns the reason for the status code (cStat) from the xMotivo.json file.
+     */
     getXMotivo() {
         let xMotivo;
         try {

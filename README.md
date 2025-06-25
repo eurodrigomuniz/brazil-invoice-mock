@@ -5,9 +5,21 @@ This project aims to mock some of Brazil's invoice systems
 # Governements Currently Covered
 ## Brazil
 
-- SEFAZ (Authorization)
+- SEFAZ (Authorization and Rejection)
     - NfeReception (Outbound Sending)
     - NfeReceptionStatus (Outbound Status Retrieval using Receipt)
+
+# Invoice Authorization Behavior
+
+By default all invoices sent will be authorized, if you intend to reject an invoice, use the following field to send the cStat desired and add the cStat code in the xMotivo.json fiel along with the Rejection description inside ./Assets/Response
+
+- NF-e: `/NFe/infNFe/infAdic/obsCont/xTexto`
+
+```json
+{
+    "123": "Description for 123 rejection"
+}
+```
 
 # Pre-requirements
 ## Clone repository

@@ -404,3 +404,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# local text file used as database for invoices
+database.txt
