@@ -2,7 +2,9 @@
 
 This project aims to mock some of Brazil's invoice systems
 
-# Governements Currently Covered
+*Contributor rodrigosmuniz is just the local user of eurodrigomuniz, so I authored the whole project*
+
+# Governments Currently Covered
 ## Brazil
 
 - SEFAZ (Authorization and Rejection)
@@ -11,7 +13,7 @@ This project aims to mock some of Brazil's invoice systems
 
 # Invoice Authorization Behavior
 
-By default all invoices sent will be authorized, if you intend to reject an invoice, use the following field to send the cStat desired and add the cStat code in the xMotivo.json fiel along with the Rejection description inside ./Assets/Response
+By default, all invoices sent will be authorized. If you intend to reject an invoice, use the following field to send the cStat desired and add the cStat code in the xMotivo.json file along with the Rejection description inside ./Assets/Response
 
 - NF-e: `/NFe/infNFe/infAdic/obsCont/xTexto`
 
@@ -23,13 +25,13 @@ By default all invoices sent will be authorized, if you intend to reject an invo
 
 # Pre-requirements
 ## Clone repository
-Open command prompt in the folder desired to store the project and run the following command (make sure you have [Git](https://git-scm.com/) installed first):
+Open the command prompt in the folder where you want to store the project and run the following command (make sure you have [Git](https://git-scm.com/) installed first):
 ```
 git clone https://github.com/eurodrigomuniz/brazil-invoice-mock.git
 ```
 ---
 ## Install Node
-Install lastest Node.js LTS version: https://nodejs.org/en/
+Install latest Node.js LTS version: https://nodejs.org/en/
 
 ---
 ## Install the following Node.js libraries
